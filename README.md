@@ -1,6 +1,6 @@
 # Dynamic CSS and JS loader
 
-This small utility will help to load css and js files dynamically/asynchronously.
+This small utility (minified version is ~747 bytes only!) will help to load css and js files dynamically/asynchronously.
 
 ###Features:
   - Load css files from server
