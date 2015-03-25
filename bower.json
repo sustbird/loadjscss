@@ -1,7 +1,7 @@
 {
     "name": "loadjscss",
     "description": "Small utility functions to load css and javascript files dynamically/asynchronously",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "loadjscss.js",
     "keywords": [
         "load css", "load js", "loadcss", "loadjs", "loadjscss", "loadcssjs"
