@@ -41,16 +41,18 @@ function loadjs(fileUrl, id, callback) {
     fileRef.setAttribute("src", fileUrl);
     loadFile(fileRef, id);
 
-    //For most browsers
     if (callback && (typeof (callback) === typeof (Function))) {
+        //For most browsers
         fileRef.onload = callback;
+
+        //For IE 6 & 7
+        fileRef.onreadystatechange = function () {
+            if (this.readyState === 'complete') {
+                callback();
+            }
+        };
     }
-    //For IE 6 & 7
-    fileRef.onreadystatechange = function () {
-        if (this.readyState === 'complete') {
-            callback();
-        }
-    };
+
 }
 
 /**
@@ -74,11 +76,13 @@ function loadcss(fileUrl, id, media, callback) {
 
     loadFile(fileRef, id, callback);
 
-    dummyImage = document.createElement('img');
-    dummyImage.onerror = function () {
-        if (callback && (typeof (callback) === typeof (Function))) {
-            callback();
-        }
-    };
-    dummyImage.src = fileUrl;
+    if (callback && (typeof (callback) === typeof (Function))) {
+        dummyImage = document.createElement('img');
+        dummyImage.onerror = function () {
+            if (callback && (typeof (callback) === typeof (Function))) {
+                callback();
+            }
+        };
+        dummyImage.src = fileUrl;
+    }
 }
