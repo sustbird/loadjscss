@@ -41,10 +41,12 @@
     </div>
 </div>
 <script>
-    function loadAnimation() {
+    function callback() {
         alert('Hi after loading javascript');
     }
-    loadjs("test.js", "firstJsId", loadAnimation);
+    loadjs("test.js", "firstJsId", function () {
+        alert('Hi after loading javascript');
+    });
 </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Dynamic CSS and JS loader
 
-This small utility (minified version is ~747 bytes only!) will help to load css and js files dynamically/asynchronously.
+This small utility will help to load css and js files dynamically/asynchronously. 
 
 ###Features:
   - Load css files from server
@@ -28,11 +28,49 @@ and then add in your html
 ```sh
 <script type="application/javascript" src="bower_components/loadjscss/loadjscss.js"></script>
 ```
+###Usage
+#####Load CSS File
+Use either one of the following way:
+1. Simple file load
+```sh
+loadcss('http://cdn.sstatic.net/stackoverflow/all.css?v=3111ce3d4bb4');
+```
+2. With id (Recommended to avoid duplicate file loading)
+```sh
+loadcss('http://cdn.sstatic.net/stackoverflow/all.css?v=3111ce3d4bb4', 'stackCssId');
+```
+3. With media
+```sh
+loadcss('http://cdn.sstatic.net/stackoverflow/all.css?v=3111ce3d4bb4', 'stackCssId', "screen");
+```
+4. With callback
+```sh
+loadcss('http://cdn.sstatic.net/stackoverflow/all.css?v=3111ce3d4bb4', 'stackCssId', "screen", function () {
+            alert('Hi after loading css');
+        });
+```
+#####Load Javascript File
+Use ither one of the following way:
+1. Simple file load
+```sh
+loadjs("test.js");
+```
+2. With id (Recommended to avoid duplicate file loading)
+```sh
+loadjs("test.js", "firstJsId");
+```
+4. With callback
+```sh
+loadjs("test.js", "firstJsId", function () {
+        alert('Hi after loading javascript');
+    });
+```
 ### API Doc
 [See here](loadjscss.md)
 
 ### Files Included:
 * loadjscss.js [main library file]
+* loadjscss.min.js [minified library file]
 * index.html [test html file]
 * loadjscss.md [api doc file]
 
