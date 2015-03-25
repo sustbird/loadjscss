@@ -66,7 +66,8 @@ loadjs("test.js", "firstJsId", function () {
     });
 ```
 ### API Doc
-[See here](loadjscss.md)
+[See here (Pretty View)](http://cdn.rawgit.com/sustbird/loadjscss/master/api-doc/index.html)
+[See here (served by Markdown)](loadjscss.md)
 
 ### Files Included:
 * loadjscss.js [main library file]
